@@ -77,7 +77,18 @@ public:
 
     float bpos = 0;
 
+    float calcolaRMS(AudioBuffer<float>& buffer);
+    float smoothRMS(float currentRms, float previousSmoothedRms);
+    float getSmoothedRmsValue() const;
+
+    juce::AudioProcessorValueTreeState& getParameters() { return parameters; }
+
+
 private:
+    float rmsValue = 0.0f;
+    float smoothedRmsValue = 0.0f;
+
+    juce::AudioProcessorValueTreeState parameters;
     //==============================================================================
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (AnalogFattenerAudioProcessor)
 };

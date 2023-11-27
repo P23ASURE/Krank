@@ -13,6 +13,7 @@
 #include "../JuceLibraryCode/JuceHeader.h"
 #include "PluginProcessor.h"
 #include <math.h>
+#include "LevelMeterComponent.h"
 
 # define M_PI           3.14159265358979323846 
 //==============================================================================
@@ -25,44 +26,30 @@ public:
     OtherLookAndFeel()
     {
         setColour(Slider::thumbColourId, Colours::red);
+       
+        knobImage = juce::ImageCache::getFromMemory(BinaryData::knob_png, BinaryData::knob_pngSize);
     }
+
     void drawRotarySlider(Graphics& g, int x, int y, int width, int height, float sliderPos,
         const float rotaryStartAngle, const float rotaryEndAngle, Slider& slider) override
     {
-        auto radius = jmin(width / 2, height / 2) - 4.0f;
-        auto centreX = x + width * 0.5f;
-        auto centreY = y + height * 0.5f;
-        auto rx = centreX - radius;
-        auto ry = centreY - radius;
-        auto rw = radius * 2.0f;
-        auto angle = rotaryStartAngle + sliderPos * (rotaryEndAngle - rotaryStartAngle);
-
-        // fill
-        g.setColour(Colours::red);
-        g.fillEllipse(rx, ry, rw, rw);
-
-        // outline
-        g.setColour(Colours::darkslategrey);
-        g.drawEllipse(rx, ry, rw, rw, 1.0f);
-
-        Path p;
-        auto pointerLength = radius * 0.33f;
-        auto pointerThickness = 2.0f;
-        p.addRectangle(-pointerThickness * 0.5f, -radius, pointerThickness, pointerLength);
-        p.applyTransform(AffineTransform::rotation(angle).translated(centreX, centreY));
-
-
-        // pointer
-        g.setColour(Colours::grey);
-        g.fillPath(p);
-
-
-
        
+        int numFrames = knobImage.getHeight() / knobImage.getWidth();
+        int frameIndex = static_cast<int>(std::round(sliderPos * (numFrames - 1)));
+        int frameHeight = knobImage.getWidth();
+
+        
+        g.drawImage(knobImage,
+            x, y, width, height,
+            0, frameIndex * frameHeight, knobImage.getWidth(), frameHeight); 
     }
+
+private:
+    juce::Image knobImage; 
 };
 
-class AnalogFattenerAudioProcessorEditor  : public AudioProcessorEditor,public Slider::Listener
+
+class AnalogFattenerAudioProcessorEditor  : public AudioProcessorEditor,public Slider::Listener, public juce::Timer
 {
 public:
     AnalogFattenerAudioProcessorEditor (AnalogFattenerAudioProcessor&);
@@ -71,7 +58,8 @@ public:
     //==============================================================================
     void paint (Graphics&) override;
     void resized() override;
-
+    void timerCallback() override;
+    
 
     void sliderValueChanged(Slider* slider) override
     {
@@ -99,7 +87,7 @@ public:
 private:
 
     OtherLookAndFeel sliderLookAndFeel;
-
+      
     Slider crankSlider;
     Slider colorSlider;
     Slider boostSlider;
@@ -109,12 +97,24 @@ private:
     Label boostLabel;
     Label limitLabel;
 
-
+    std::unique_ptr<juce::AudioProcessorValueTreeState::SliderAttachment> crankAttachment;
+    std::unique_ptr<juce::AudioProcessorValueTreeState::SliderAttachment> colorAttachment;
+    std::unique_ptr<juce::AudioProcessorValueTreeState::SliderAttachment> boostAttachment;
+    std::unique_ptr<juce::AudioProcessorValueTreeState::SliderAttachment> limitAttachment;
 
     const float border = 100.0;
     float lowerKnobSize = 70.0;
 
+    juce::Image backgroundImage;
+    juce::Image knobImage;
+
+    float rmsValue = 0.0f; 
+    float smoothedRmsValue = 0.0f; 
+
+    LevelMeterComponent levelMeter;
+
     AnalogFattenerAudioProcessor& processor;
+
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (AnalogFattenerAudioProcessorEditor)
 };

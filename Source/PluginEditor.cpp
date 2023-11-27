@@ -12,11 +12,14 @@
 #include "PluginEditor.h"
 
 
-
 //==============================================================================
 AnalogFattenerAudioProcessorEditor::AnalogFattenerAudioProcessorEditor(AnalogFattenerAudioProcessor& p)
     : AudioProcessorEditor(&p), processor(p)
 {
+    startTimerHz(30);
+    backgroundImage = juce::ImageCache::getFromMemory(BinaryData::background_png, BinaryData::background_pngSize);
+    
+
     setSize(400, 500);
 
     setLookAndFeel(&sliderLookAndFeel);
@@ -54,6 +57,14 @@ AnalogFattenerAudioProcessorEditor::AnalogFattenerAudioProcessorEditor(AnalogFat
     addAndMakeVisible(boostSlider);
     addAndMakeVisible(limitSlider);
 
+    // Crea gli attachment
+    crankAttachment = std::make_unique<juce::AudioProcessorValueTreeState::SliderAttachment>(processor.getParameters(), "crack", crankSlider);
+    colorAttachment = std::make_unique<juce::AudioProcessorValueTreeState::SliderAttachment>(processor.getParameters(), "color", colorSlider);
+    boostAttachment = std::make_unique<juce::AudioProcessorValueTreeState::SliderAttachment>(processor.getParameters(), "boost", boostSlider);
+    limitAttachment = std::make_unique<juce::AudioProcessorValueTreeState::SliderAttachment>(processor.getParameters(), "limit", limitSlider);
+
+
+
     crankLabel.setText("Crank", NotificationType::dontSendNotification);
     crankLabel.setJustificationType(Justification::centredTop);
     crankLabel.attachToComponent(&crankSlider, false);
@@ -70,6 +81,19 @@ AnalogFattenerAudioProcessorEditor::AnalogFattenerAudioProcessorEditor(AnalogFat
     limitLabel.setJustificationType(Justification::centredTop);
     limitLabel.attachToComponent(&limitSlider, false);
 
+    addAndMakeVisible(levelMeter);
+    int meterWidth = 20;
+    int meterHeight = getHeight() / 2;
+    int meterX = getWidth() - meterWidth - 10; 
+    int meterY = (getHeight() - meterHeight) / 2; 
+
+    levelMeter.setBounds(meterX, meterY, meterWidth, meterHeight);
+
+}
+
+void AnalogFattenerAudioProcessorEditor::timerCallback() {
+    auto rmsLevel = processor.getSmoothedRmsValue();
+    levelMeter.setLevel(rmsLevel);
 }
 
 AnalogFattenerAudioProcessorEditor::~AnalogFattenerAudioProcessorEditor()
@@ -80,7 +104,7 @@ AnalogFattenerAudioProcessorEditor::~AnalogFattenerAudioProcessorEditor()
 //==============================================================================
 void AnalogFattenerAudioProcessorEditor::paint (Graphics& g)
 {
-    g.fillAll(Colours::black);
+    g.drawImageAt(backgroundImage, 0, 0);
     g.setColour (Colours::white);
     g.setFont (15.0f);
 }
@@ -91,4 +115,11 @@ void AnalogFattenerAudioProcessorEditor::resized()
     colorSlider.setBounds(border-35,(getHeight()-border-35),lowerKnobSize,lowerKnobSize);
     boostSlider.setBounds(getWidth()/2-35,getHeight()-border-35,lowerKnobSize,lowerKnobSize);  
     limitSlider.setBounds(getWidth()-border-35,(getHeight()-border-35),lowerKnobSize,lowerKnobSize);
+
+    int meterWidth = 20;
+    int meterHeight = getHeight() / 2;
+    int meterX = getWidth() - meterWidth - 10; 
+    int meterY = (getHeight() - meterHeight) / 2; 
+
+    levelMeter.setBounds(meterX, meterY, meterWidth, meterHeight);
 }

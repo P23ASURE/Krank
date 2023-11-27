@@ -17,14 +17,21 @@
 //==============================================================================
 AnalogFattenerAudioProcessor::AnalogFattenerAudioProcessor()
 #ifndef JucePlugin_PreferredChannelConfigurations
-     : AudioProcessor (BusesProperties()
-                     #if ! JucePlugin_IsMidiEffect
-                      #if ! JucePlugin_IsSynth
-                       .withInput  ("Input",  AudioChannelSet::stereo(), true)
-                      #endif
-                       .withOutput ("Output", AudioChannelSet::stereo(), true)
-                     #endif
-                       )
+    : AudioProcessor(BusesProperties()
+#if ! JucePlugin_IsMidiEffect
+#if ! JucePlugin_IsSynth
+        .withInput("Input", AudioChannelSet::stereo(), true)
+#endif
+        .withOutput("Output", AudioChannelSet::stereo(), true)
+#endif
+    ),
+    parameters(*this, nullptr, "Parameters",
+        {
+            std::make_unique<juce::AudioParameterFloat>("crack", "Crack", 0.0f, 1.0f, 0.5f),
+            std::make_unique<juce::AudioParameterFloat>("color", "Color", 0.0f, 1.0f, 0.5f),
+            std::make_unique<juce::AudioParameterFloat>("boost", "Boost", 0.0f, 1.0f, 0.5f),
+            std::make_unique<juce::AudioParameterFloat>("limit", "Limit", 0.0f, 1.0f, 0.5f)
+        })
 #endif
 {
 }
@@ -32,6 +39,31 @@ AnalogFattenerAudioProcessor::AnalogFattenerAudioProcessor()
 AnalogFattenerAudioProcessor::~AnalogFattenerAudioProcessor()
 {
 }
+
+
+float AnalogFattenerAudioProcessor::calcolaRMS(AudioBuffer<float>& buffer) {
+    auto numSamples = buffer.getNumSamples();
+    auto numChannels = buffer.getNumChannels();
+
+    float sum = 0.0f;
+
+    for (int channel = 0; channel < numChannels; ++channel) {
+        auto* channelData = buffer.getReadPointer(channel);
+
+        for (int sample = 0; sample < numSamples; ++sample) {
+            sum += channelData[sample] * channelData[sample];
+        }
+    }
+
+    float mean = sum / (numSamples * numChannels);
+    return sqrt(mean);
+}
+
+float AnalogFattenerAudioProcessor::smoothRMS(float currentRms, float previousSmoothedRms) {
+    float smoothingFactor = 0.05f; // Questo può essere adattato in base alle esigenze
+    return previousSmoothedRms + smoothingFactor * (currentRms - previousSmoothedRms);
+}
+
 
 //==============================================================================
 const String AnalogFattenerAudioProcessor::getName() const
@@ -143,21 +175,9 @@ void AnalogFattenerAudioProcessor::processBlock (AudioBuffer<float>& buffer, Mid
     auto totalNumInputChannels  = getTotalNumInputChannels();
     auto totalNumOutputChannels = getTotalNumOutputChannels();
 
-    // In case we have more outputs than inputs, this code clears any output
-    // channels that didn't contain input data, (because these aren't
-    // guaranteed to be empty - they may contain garbage).
-    // This is here to avoid people getting screaming feedback
-    // when they first compile a plugin, but obviously you don't need to keep
-    // this code if your algorithm always overwrites all the output channels.
     for (auto i = totalNumInputChannels; i < totalNumOutputChannels; ++i)
         buffer.clear (i, 0, buffer.getNumSamples());
 
-    // This is the place where you'd normally do the guts of your plugin's
-    // audio processing...
-    // Make sure to reset the state if your inner loop is processing
-    // the samples and the outer loop is handling the channels.
-    // Alternatively, you can process the samples with the channels
-    // interleaved by keeping the same state.
     for (int channel = 0; channel < totalNumInputChannels; ++channel)
     {
         const auto inputData = buffer.getReadPointer (channel);
@@ -182,6 +202,11 @@ void AnalogFattenerAudioProcessor::processBlock (AudioBuffer<float>& buffer, Mid
         }
 
     }
+
+    float rms = calcolaRMS(buffer); // Calcola RMS qui
+    rmsValue = rms;
+    smoothedRmsValue = smoothRMS(rmsValue, smoothedRmsValue); // Applica smoothing
+
 }
 
 
@@ -199,15 +224,28 @@ AudioProcessorEditor* AnalogFattenerAudioProcessor::createEditor()
 //==============================================================================
 void AnalogFattenerAudioProcessor::getStateInformation (MemoryBlock& destData)
 {
-    // You should use this method to store your parameters in the memory block.
-    // You could do that either as raw data, or use the XML or ValueTree classes
-    // as intermediaries to make it easy to save and load complex data.
+    // Creare un nuovo oggetto Xml con lo stato del valore albero corrente
+    auto state = parameters.copyState();
+    std::unique_ptr<XmlElement> xml(state.createXml());
+    copyXmlToBinary(*xml, destData);
 }
 
 void AnalogFattenerAudioProcessor::setStateInformation (const void* data, int sizeInBytes)
 {
-    // You should use this method to restore your parameters from this memory block,
-    // whose contents will have been created by the getStateInformation() call.
+    // Creare un oggetto Xml dal blocco binario
+    std::unique_ptr<XmlElement> xmlState(getXmlFromBinary(data, sizeInBytes));
+    if (xmlState != nullptr)
+    {
+        // Se il blocco binario ha un Xml valido, utilizzalo per impostare lo stato
+        if (xmlState->hasTagName(parameters.state.getType()))
+        {
+            parameters.replaceState(ValueTree::fromXml(*xmlState));
+        }
+    }
+}
+
+float AnalogFattenerAudioProcessor::getSmoothedRmsValue() const {
+    return smoothedRmsValue;
 }
 
 //==============================================================================
