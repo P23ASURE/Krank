@@ -20,4 +20,4 @@ The plugin offers several parameters to modulate the effect:
 The plugin includes a level meter that uses a smoothed RMS (Root Mean Square) value to display the average amplitude of the signal in a visually fluid manner. This is useful for monitoring the impact of the effect on the audio signal.
 
 
-![Krank]([URL dell'immagine](https://github.com/P23ASURE/Krank/blob/master/krank_screenshot.png)https://github.com/P23ASURE/Krank/blob/master/krank_screenshot.png)
+![Krank](https://github.com/P23ASURE/Krank/blob/master/krank_screenshot.png)
