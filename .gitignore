@@ -1,0 +1,156 @@
+
+Builds/VisualStudio2022/x64/Release/VST3/resources.res
+Builds/VisualStudio2022/x64/Release/VST3/include_juce_audio_plugin_client_VST3.obj
+Builds/VisualStudio2022/x64/Release/VST3/AnalogFattener_VST3.vcxproj.FileListAbsolute.txt
+Builds/VisualStudio2022/x64/Release/VST3/AnalogFattener_VST3.log
+Builds/VisualStudio2022/x64/Release/VST3/AnalogFattener.vst3.recipe
+Builds/VisualStudio2022/x64/Release/VST3/AnalogFattener.vst3
+Builds/VisualStudio2022/x64/Release/VST3/AnalogFattener.pdb
+Builds/VisualStudio2022/x64/Release/VST3/AnalogFattener.lib
+Builds/VisualStudio2022/x64/Release/VST3/AnalogFattener.iobj
+Builds/VisualStudio2022/x64/Release/VST3/AnalogFattener.exp
+Builds/VisualStudio2022/x64/Release/VST3/AnalogFattener.Build.CppClean.log
+Builds/VisualStudio2022/x64/Release/VST3/AnalogFa.135B1E12.tlog/rc.write.1.tlog
+Builds/VisualStudio2022/x64/Release/VST3/AnalogFa.135B1E12.tlog/rc.read.1.tlog
+Builds/VisualStudio2022/x64/Release/VST3/AnalogFa.135B1E12.tlog/rc.command.1.tlog
+Builds/VisualStudio2022/x64/Release/VST3/AnalogFa.135B1E12.tlog/link.write.2u.tlog
+Builds/VisualStudio2022/x64/Release/VST3/AnalogFa.135B1E12.tlog/link.write.1.tlog
+Builds/VisualStudio2022/x64/Release/VST3/AnalogFa.135B1E12.tlog/link.read.1.tlog
+Builds/VisualStudio2022/x64/Release/VST3/AnalogFa.135B1E12.tlog/link.command.1.tlog
+Builds/VisualStudio2022/x64/Release/VST3/AnalogFa.135B1E12.tlog/CL.write.1.tlog
+Builds/VisualStudio2022/x64/Release/VST3/AnalogFa.135B1E12.tlog/CL.read.1.tlog
+Builds/VisualStudio2022/x64/Release/VST3/AnalogFa.135B1E12.tlog/Cl.items.tlog
+Builds/VisualStudio2022/x64/Release/VST3/AnalogFa.135B1E12.tlog/CL.command.1.tlog
+Builds/VisualStudio2022/x64/Release/VST3/AnalogFa.135B1E12.tlog/AnalogFattener_VST3.lastbuildstate
+Builds/VisualStudio2022/x64/Release/Standalone Plugin/resources.res
+Builds/VisualStudio2022/x64/Release/Standalone Plugin/include_juce_audio_plugin_client_Standalone.obj
+Builds/VisualStudio2022/x64/Release/Standalone Plugin/AnalogFattener_StandalonePlugin.vcxproj.FileListAbsolute.txt
+Builds/VisualStudio2022/x64/Release/Standalone Plugin/AnalogFattener_StandalonePlugin.log
+Builds/VisualStudio2022/x64/Release/Standalone Plugin/AnalogFattener.pdb
+Builds/VisualStudio2022/x64/Release/Standalone Plugin/AnalogFattener.iobj
+Builds/VisualStudio2022/x64/Release/Standalone Plugin/AnalogFattener.exe.recipe
+Builds/VisualStudio2022/x64/Release/Standalone Plugin/AnalogFattener.exe
+Builds/VisualStudio2022/x64/Release/Standalone Plugin/AnalogFattener.Build.CppClean.log
+Builds/VisualStudio2022/x64/Release/Standalone Plugin/AnalogFa.82D434AF.tlog/rc.write.1.tlog
+Builds/VisualStudio2022/x64/Release/Standalone Plugin/AnalogFa.82D434AF.tlog/rc.read.1.tlog
+Builds/VisualStudio2022/x64/Release/Standalone Plugin/AnalogFa.82D434AF.tlog/rc.command.1.tlog
+Builds/VisualStudio2022/x64/Release/Standalone Plugin/AnalogFa.82D434AF.tlog/link.write.2u.tlog
+Builds/VisualStudio2022/x64/Release/Standalone Plugin/AnalogFa.82D434AF.tlog/link.write.1.tlog
+Builds/VisualStudio2022/x64/Release/Standalone Plugin/AnalogFa.82D434AF.tlog/link.read.1.tlog
+Builds/VisualStudio2022/x64/Release/Standalone Plugin/AnalogFa.82D434AF.tlog/link.command.1.tlog
+Builds/VisualStudio2022/x64/Release/Standalone Plugin/AnalogFa.82D434AF.tlog/CL.write.1.tlog
+Builds/VisualStudio2022/x64/Release/Standalone Plugin/AnalogFa.82D434AF.tlog/CL.read.1.tlog
+Builds/VisualStudio2022/x64/Release/Standalone Plugin/AnalogFa.82D434AF.tlog/Cl.items.tlog
+Builds/VisualStudio2022/x64/Release/Standalone Plugin/AnalogFa.82D434AF.tlog/CL.command.1.tlog
+Builds/VisualStudio2022/x64/Release/Standalone Plugin/AnalogFa.82D434AF.tlog/AnalogFattener_StandalonePlugin.lastbuildstate
+Builds/VisualStudio2022/x64/Release/Shared Code/PluginProcessor.obj
+Builds/VisualStudio2022/x64/Release/Shared Code/PluginEditor.obj
+Builds/VisualStudio2022/x64/Release/Shared Code/include_juce_opengl.obj
+Builds/VisualStudio2022/x64/Release/Shared Code/include_juce_gui_extra.obj
+Builds/VisualStudio2022/x64/Release/Shared Code/include_juce_gui_basics.obj
+Builds/VisualStudio2022/x64/Release/Shared Code/include_juce_graphics.obj
+Builds/VisualStudio2022/x64/Release/Shared Code/include_juce_events.obj
+Builds/VisualStudio2022/x64/Release/Shared Code/include_juce_data_structures.obj
+Builds/VisualStudio2022/x64/Release/Shared Code/include_juce_cryptography.obj
+Builds/VisualStudio2022/x64/Release/Shared Code/include_juce_core.obj
+Builds/VisualStudio2022/x64/Release/Shared Code/include_juce_audio_utils.obj
+Builds/VisualStudio2022/x64/Release/Shared Code/include_juce_audio_processors_lv2_libs.obj
+Builds/VisualStudio2022/x64/Release/Shared Code/include_juce_audio_processors_ara.obj
+Builds/VisualStudio2022/x64/Release/Shared Code/include_juce_audio_processors.obj
+Builds/VisualStudio2022/x64/Release/Shared Code/include_juce_audio_plugin_client_utils.obj
+Builds/VisualStudio2022/x64/Release/Shared Code/include_juce_audio_plugin_client_RTAS_utils.obj
+Builds/VisualStudio2022/x64/Release/Shared Code/include_juce_audio_plugin_client_RTAS_4.obj
+Builds/VisualStudio2022/x64/Release/Shared Code/include_juce_audio_plugin_client_RTAS_3.obj
+Builds/VisualStudio2022/x64/Release/Shared Code/include_juce_audio_plugin_client_RTAS_2.obj
+Builds/VisualStudio2022/x64/Release/Shared Code/include_juce_audio_plugin_client_RTAS_1.obj
+Builds/VisualStudio2022/x64/Release/Shared Code/include_juce_audio_plugin_client_ARA.obj
+Builds/VisualStudio2022/x64/Release/Shared Code/include_juce_audio_formats.obj
+Builds/VisualStudio2022/x64/Release/Shared Code/include_juce_audio_devices.obj
+Builds/VisualStudio2022/x64/Release/Shared Code/include_juce_audio_basics.obj
+Builds/VisualStudio2022/x64/Release/Shared Code/BinaryData.obj
+Builds/VisualStudio2022/x64/Release/Shared Code/AnalogFattener_SharedCode.vcxproj.FileListAbsolute.txt
+Builds/VisualStudio2022/x64/Release/Shared Code/AnalogFattener_SharedCode.log
+Builds/VisualStudio2022/x64/Release/Shared Code/AnalogFattener.pdb
+Builds/VisualStudio2022/x64/Release/Shared Code/AnalogFattener.lib.recipe
+Builds/VisualStudio2022/x64/Release/Shared Code/AnalogFattener.lib
+Builds/VisualStudio2022/x64/Release/Shared Code/AnalogFattener.Build.CppClean.log
+Builds/VisualStudio2022/x64/Release/Shared Code/AnalogFa.BC9C6401.tlog/Lib.command.1.tlog
+Builds/VisualStudio2022/x64/Release/Shared Code/AnalogFa.BC9C6401.tlog/Lib-link.write.1.tlog
+Builds/VisualStudio2022/x64/Release/Shared Code/AnalogFa.BC9C6401.tlog/Lib-link.read.1.tlog
+Builds/VisualStudio2022/x64/Release/Shared Code/AnalogFa.BC9C6401.tlog/CL.read.1.tlog
+Builds/VisualStudio2022/x64/Release/Shared Code/AnalogFa.BC9C6401.tlog/Cl.items.tlog
+Builds/VisualStudio2022/x64/Release/Shared Code/AnalogFa.BC9C6401.tlog/CL.command.1.tlog
+Builds/VisualStudio2022/x64/Release/Shared Code/AnalogFa.BC9C6401.tlog/CL.13728.write.1.tlog
+Builds/VisualStudio2022/x64/Release/Shared Code/AnalogFa.BC9C6401.tlog/AnalogFattener_SharedCode.lastbuildstate
+Builds/VisualStudio2022/x64/Debug/Standalone Plugin/resources.res
+Builds/VisualStudio2022/x64/Debug/Standalone Plugin/include_juce_audio_plugin_client_Standalone.obj
+Builds/VisualStudio2022/x64/Debug/Standalone Plugin/AnalogFattener_StandalonePlugin.vcxproj.FileListAbsolute.txt
+Builds/VisualStudio2022/x64/Debug/Standalone Plugin/AnalogFattener_StandalonePlugin.log
+Builds/VisualStudio2022/x64/Debug/Standalone Plugin/AnalogFattener.pdb
+Builds/VisualStudio2022/x64/Debug/Standalone Plugin/AnalogFattener.ilk
+Builds/VisualStudio2022/x64/Debug/Standalone Plugin/AnalogFattener.exe.recipe
+Builds/VisualStudio2022/x64/Debug/Standalone Plugin/AnalogFattener.exe
+Builds/VisualStudio2022/x64/Debug/Standalone Plugin/AnalogFa.82D434AF.tlog/rc.write.1.tlog
+Builds/VisualStudio2022/x64/Debug/Standalone Plugin/AnalogFa.82D434AF.tlog/rc.read.1.tlog
+Builds/VisualStudio2022/x64/Debug/Standalone Plugin/AnalogFa.82D434AF.tlog/rc.command.1.tlog
+Builds/VisualStudio2022/x64/Debug/Standalone Plugin/AnalogFa.82D434AF.tlog/link.write.1.tlog
+Builds/VisualStudio2022/x64/Debug/Standalone Plugin/AnalogFa.82D434AF.tlog/link.read.1.tlog
+Builds/VisualStudio2022/x64/Debug/Standalone Plugin/AnalogFa.82D434AF.tlog/link.command.1.tlog
+Builds/VisualStudio2022/x64/Debug/Standalone Plugin/AnalogFa.82D434AF.tlog/CL.write.1.tlog
+Builds/VisualStudio2022/x64/Debug/Standalone Plugin/AnalogFa.82D434AF.tlog/CL.read.1.tlog
+Builds/VisualStudio2022/x64/Debug/Standalone Plugin/AnalogFa.82D434AF.tlog/Cl.items.tlog
+Builds/VisualStudio2022/x64/Debug/Standalone Plugin/AnalogFa.82D434AF.tlog/CL.command.1.tlog
+Builds/VisualStudio2022/x64/Debug/Standalone Plugin/AnalogFa.82D434AF.tlog/AnalogFattener_StandalonePlugin.lastbuildstate
+Builds/VisualStudio2022/x64/Debug/Shared Code/PluginProcessor.obj
+Builds/VisualStudio2022/x64/Debug/Shared Code/PluginEditor.obj
+Builds/VisualStudio2022/x64/Debug/Shared Code/include_juce_opengl.obj
+Builds/VisualStudio2022/x64/Debug/Shared Code/include_juce_gui_extra.obj
+Builds/VisualStudio2022/x64/Debug/Shared Code/include_juce_gui_basics.obj
+Builds/VisualStudio2022/x64/Debug/Shared Code/include_juce_graphics.obj
+Builds/VisualStudio2022/x64/Debug/Shared Code/include_juce_events.obj
+Builds/VisualStudio2022/x64/Debug/Shared Code/include_juce_data_structures.obj
+Builds/VisualStudio2022/x64/Debug/Shared Code/include_juce_cryptography.obj
+Builds/VisualStudio2022/x64/Debug/Shared Code/include_juce_core.obj
+Builds/VisualStudio2022/x64/Debug/Shared Code/include_juce_audio_utils.obj
+Builds/VisualStudio2022/x64/Debug/Shared Code/include_juce_audio_processors_lv2_libs.obj
+Builds/VisualStudio2022/x64/Debug/Shared Code/include_juce_audio_processors_ara.obj
+Builds/VisualStudio2022/x64/Debug/Shared Code/include_juce_audio_processors.obj
+Builds/VisualStudio2022/x64/Debug/Shared Code/include_juce_audio_plugin_client_utils.obj
+Builds/VisualStudio2022/x64/Debug/Shared Code/include_juce_audio_plugin_client_RTAS_utils.obj
+Builds/VisualStudio2022/x64/Debug/Shared Code/include_juce_audio_plugin_client_RTAS_4.obj
+Builds/VisualStudio2022/x64/Debug/Shared Code/include_juce_audio_plugin_client_RTAS_3.obj
+Builds/VisualStudio2022/x64/Debug/Shared Code/include_juce_audio_plugin_client_RTAS_2.obj
+Builds/VisualStudio2022/x64/Debug/Shared Code/include_juce_audio_plugin_client_RTAS_1.obj
+Builds/VisualStudio2022/x64/Debug/Shared Code/include_juce_audio_plugin_client_ARA.obj
+Builds/VisualStudio2022/x64/Debug/Shared Code/include_juce_audio_formats.obj
+Builds/VisualStudio2022/x64/Debug/Shared Code/include_juce_audio_devices.obj
+Builds/VisualStudio2022/x64/Debug/Shared Code/include_juce_audio_basics.obj
+Builds/VisualStudio2022/x64/Debug/Shared Code/BinaryData.obj
+Builds/VisualStudio2022/x64/Debug/Shared Code/AnalogFattener_SharedCode.vcxproj.FileListAbsolute.txt
+Builds/VisualStudio2022/x64/Debug/Shared Code/AnalogFattener_SharedCode.log
+Builds/VisualStudio2022/x64/Debug/Shared Code/AnalogFattener.pdb
+Builds/VisualStudio2022/x64/Debug/Shared Code/AnalogFattener.lib.recipe
+Builds/VisualStudio2022/x64/Debug/Shared Code/AnalogFattener.lib
+Builds/VisualStudio2022/x64/Debug/Shared Code/AnalogFa.BC9C6401.tlog/Lib.command.1.tlog
+Builds/VisualStudio2022/x64/Debug/Shared Code/AnalogFa.BC9C6401.tlog/Lib-link.write.1.tlog
+Builds/VisualStudio2022/x64/Debug/Shared Code/AnalogFa.BC9C6401.tlog/Lib-link.read.1.tlog
+Builds/VisualStudio2022/x64/Debug/Shared Code/AnalogFa.BC9C6401.tlog/CL.read.1.tlog
+Builds/VisualStudio2022/x64/Debug/Shared Code/AnalogFa.BC9C6401.tlog/Cl.items.tlog
+Builds/VisualStudio2022/x64/Debug/Shared Code/AnalogFa.BC9C6401.tlog/CL.command.1.tlog
+Builds/VisualStudio2022/x64/Debug/Shared Code/AnalogFa.BC9C6401.tlog/CL.10404.write.1.tlog
+Builds/VisualStudio2022/x64/Debug/Shared Code/AnalogFa.BC9C6401.tlog/AnalogFattener_SharedCode.lastbuildstate
+Builds/VisualStudio2022/resources.rc
+Builds/VisualStudio2022/AnalogFattener_VST3.vcxproj.filters
+Builds/VisualStudio2022/AnalogFattener_VST3.vcxproj
+Builds/VisualStudio2022/AnalogFattener_StandalonePlugin.vcxproj.user
+Builds/VisualStudio2022/AnalogFattener_StandalonePlugin.vcxproj.filters
+Builds/VisualStudio2022/AnalogFattener_StandalonePlugin.vcxproj
+Builds/VisualStudio2022/AnalogFattener_SharedCode.vcxproj.filters
+Builds/VisualStudio2022/AnalogFattener_SharedCode.vcxproj
+Builds/VisualStudio2022/AnalogFattener.sln
+Builds/VisualStudio2022/.vs/AnalogFattener/v17/Solution.VC.db
+Builds/VisualStudio2022/.vs/AnalogFattener/v17/fileList.bin
+Builds/VisualStudio2022/.vs/AnalogFattener/v17/Browse.VC.db
+Builds/VisualStudio2022/.vs/AnalogFattener/v17/.suo
+Builds/VisualStudio2022/.vs/AnalogFattener/FileContentIndex/e3576455-e70d-4b74-8b53-6047732528a8.vsidx
+Builds/VisualStudio2022/.vs/AnalogFattener/FileContentIndex/abce1b1c-3aa9-44bd-b006-09c8939e4f93.vsidx
